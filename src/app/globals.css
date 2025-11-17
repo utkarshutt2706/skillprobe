@@ -1,26 +1,238 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Your custom theme configuration */
+@theme {
+    /* Primary Colors */
+    --color-primary-50: #f3f0f9;
+    --color-primary-100: #e1d8f2;
+    --color-primary-200: #c8b6eb;
+    --color-primary-300: #a17fe5;
+    --color-primary-400: #7f4be6;
+    --color-primary-500: #5e17eb;
+    --color-primary-600: #5111ce;
+    --color-primary-700: #420ea9;
+    --color-primary-800: #330b83;
+    --color-primary-900: #24085d;
+
+    /* Secondary Colors */
+    --color-secondary-50: #f9fde7;
+    --color-secondary-100: #f0f6e4;
+    --color-secondary-200: #e0efc1;
+    --color-secondary-300: #cdeb92;
+    --color-secondary-400: #bbe862;
+    --color-secondary-500: #a4eb19;
+    --color-secondary-600: #91ce16;
+    --color-secondary-700: #6f9c16;
+    --color-secondary-800: #537410;
+    --color-secondary-900: #3a520b;
+
+    /* Accent Teal Colors */
+    --color-accent-teal-50: #e6fafa;
+    --color-accent-teal-100: #ccf5f5;
+    --color-accent-teal-200: #99ebeb;
+    --color-accent-teal-300: #67e4e4;
+    --color-accent-teal-400: #34d9d9;
+    --color-accent-teal-500: #19e5e5;
+    --color-accent-teal-600: #0fbcbc;
+    --color-accent-teal-700: #0b8d8d;
+    --color-accent-teal-800: #085e5e;
+    --color-accent-teal-900: #042f2f;
+
+    /* Accent Pink Colors */
+    --color-accent-pink-50: #fce9f6;
+    --color-accent-pink-100: #f9d3ed;
+    --color-accent-pink-200: #f3a7db;
+    --color-accent-pink-300: #ed7bc9;
+    --color-accent-pink-400: #e895cd;
+    --color-accent-pink-500: #e467ba;
+    --color-accent-pink-600: #df1f9f;
+    --color-accent-pink-700: #a71777;
+    --color-accent-pink-800: #6f104f;
+    --color-accent-pink-900: #380828;
+
+    /* Accent Orange Colors */
+    --color-accent-orange-50: #fef4e8;
+    --color-accent-orange-100: #fde9d1;
+    --color-accent-orange-200: #fbd3a3;
+    --color-accent-orange-300: #efb275;
+    --color-accent-orange-400: #efa066;
+    --color-accent-orange-500: #ef9942;
+    --color-accent-orange-600: #f27f0c;
+    --color-accent-orange-700: #b65f09;
+    --color-accent-orange-800: #7a3f06;
+    --color-accent-orange-900: #3d2003;
+
+    /* Neutral Colors */
+    --color-neutral-50: #f9f9fa;
+    --color-neutral-100: #edeced;
+    --color-neutral-200: #d8d7d9;
+    --color-neutral-300: #bebcc1;
+    --color-neutral-400: #a4a2a9;
+    --color-neutral-500: #8a8691;
+    --color-neutral-600: #706b79;
+    --color-neutral-700: #57535f;
+    --color-neutral-800: #3e3a44;
+    --color-neutral-900: #24222a;
+
+    /* Semantic Colors - Success */
+    --color-success-50: #e6f9ef;
+    --color-success-100: #ccf3df;
+    --color-success-200: #99e7bf;
+    --color-success-300: #70db9c;
+    --color-success-400: #4dd380;
+    --color-success-500: #2cd271;
+    --color-success-600: #1ead5a;
+    --color-success-700: #168243;
+    --color-success-800: #0f562d;
+    --color-success-900: #072b16;
+
+    /* Semantic Colors - Warning */
+    --color-warning-50: #fef9e8;
+    --color-warning-100: #fef3d1;
+    --color-warning-200: #fde7a3;
+    --color-warning-300: #efc675;
+    --color-warning-400: #efb85c;
+    --color-warning-500: #efb542;
+    --color-warning-600: #f2a50c;
+    --color-warning-700: #b67c09;
+    --color-warning-800: #795306;
+    --color-warning-900: #3d2903;
+
+    /* Semantic Colors - Error */
+    --color-error-50: #fce9eb;
+    --color-error-100: #f9d3d7;
+    --color-error-200: #f3a7af;
+    --color-error-300: #e87c85;
+    --color-error-400: #e85865;
+    --color-error-500: #e23644;
+    --color-error-600: #ce1626;
+    --color-error-700: #9b111c;
+    --color-error-800: #670b13;
+    --color-error-900: #340609;
+
+    /* Semantic Colors - Info */
+    --color-info-50: #e8f3fc;
+    --color-info-100: #d1e7f9;
+    --color-info-200: #a3cff3;
+    --color-info-300: #7cb2e8;
+    --color-info-400: #5c9de0;
+    --color-info-500: #368ce2;
+    --color-info-600: #1672ce;
+    --color-info-700: #11559b;
+    --color-info-800: #0b3867;
+    --color-info-900: #061c34;
+
+    /* Font Families */
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-display: 'Poppins', system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-sans);
+    color: var(--color-neutral-800);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--color-neutral-900);
+}
+
+/* Custom component styles using @layer */
+@layer components {
+    .btn-primary {
+        @apply inline-flex items-center justify-center px-6 py-3 bg-primary-500 text-white font-medium rounded-lg transition-all duration-200 shadow-lg shadow-primary-500/30;
+    }
+
+    .btn-primary:hover {
+        @apply bg-primary-600 shadow-xl shadow-primary-500/40 -translate-y-0.5;
+    }
+
+    .btn-primary:active {
+        @apply bg-primary-700;
+    }
+
+    .btn-primary:disabled {
+        @apply opacity-50 cursor-not-allowed;
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center justify-center px-6 py-3 bg-white text-primary-500 font-medium rounded-lg border-2 border-primary-500 transition-all duration-200;
+    }
+
+    .btn-secondary:hover {
+        @apply bg-primary-50;
+    }
+
+    .btn-secondary:active {
+        @apply bg-primary-100;
+    }
+
+    .btn-accent {
+        @apply inline-flex items-center justify-center px-6 py-3 bg-accent-orange-500 text-white font-medium rounded-lg transition-all duration-200 shadow-lg shadow-accent-orange-500/30;
+    }
+
+    .btn-accent:hover {
+        @apply bg-accent-orange-600 shadow-xl;
+    }
+
+    .btn-accent:active {
+        @apply bg-accent-orange-700;
+    }
+
+    .btn-ghost {
+        @apply inline-flex items-center justify-center px-6 py-3 text-primary-500 font-medium rounded-lg transition-all duration-200;
+    }
+
+    .btn-ghost:hover {
+        @apply bg-primary-50;
+    }
+
+    .btn-ghost:active {
+        @apply bg-primary-100;
+    }
+
+    .btn-outline {
+        @apply inline-flex items-center justify-center px-6 py-3 border-2 border-neutral-300 text-neutral-700 font-medium rounded-lg transition-all duration-200;
+    }
+
+    .btn-outline:hover {
+        @apply border-primary-500 text-primary-500;
+    }
+
+    .card {
+        @apply bg-white rounded-2xl shadow-sm border border-neutral-200 transition-all duration-300;
+    }
+
+    .card:hover {
+        @apply shadow-xl;
+    }
+
+    .text-gradient {
+        @apply bg-gradient-to-r from-primary-600 to-accent-teal-500 bg-clip-text text-transparent;
+    }
+}
+
+@layer utilities {
+    .section-padding {
+        @apply py-20 px-6 md:px-12 lg:px-20;
+    }
+
+    .gradient-bg {
+        @apply bg-gradient-to-br from-primary-50 via-white to-accent-teal-50;
+    }
+
+    .animate-delay-200 {
+        animation-delay: 200ms;
+    }
+
+    .animate-delay-400 {
+        animation-delay: 400ms;
+    }
 }

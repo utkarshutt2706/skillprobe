@@ -71,28 +71,32 @@ const HeroSection = () => {
                         </p>
 
                         {/* Fixed Button Container */}
-                        <div className='flex flex-wrap items-center gap-4'>
-                            <Link href='/signup'>
-                                <Button
-                                    variant='primary'
-                                    size='lg'
-                                    className='h-14'
-                                >
-                                    <span className='flex items-center gap-2'>
-                                        Get Started Free
-                                        <ArrowRight className='w-5 h-5' />
-                                    </span>
-                                </Button>
-                            </Link>
-                            <Link href='/mentors'>
-                                <Button
-                                    variant='secondary'
-                                    size='lg'
-                                    className='h-14'
-                                >
-                                    Explore Mentors
-                                </Button>
-                            </Link>
+                        <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-xl'>
+                            <div className='w-full min-w-0'>
+                                <Link href='/signup'>
+                                    <Button
+                                        variant='primary'
+                                        size='lg'
+                                        className='w-full h-14 whitespace-normal text-center leading-tight'
+                                    >
+                                        <span className='inline-flex items-center justify-center gap-2'>
+                                            Get Started Free
+                                            <ArrowRight className='w-5 h-5 shrink-0' />
+                                        </span>
+                                    </Button>
+                                </Link>
+                            </div>
+                            <div className='w-full min-w-0'>
+                                <Link href='/mentors'>
+                                    <Button
+                                        variant='secondary'
+                                        size='lg'
+                                        className='w-full h-14 whitespace-normal text-center leading-tight'
+                                    >
+                                        Explore Mentors
+                                    </Button>
+                                </Link>
+                            </div>
                         </div>
                     </motion.div>
 

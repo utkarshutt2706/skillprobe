@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const CTASection = () => {
     return (
-        <section className='section-padding bg-gradient-to-br from-primary-600 via-primary-500 to-accent-teal-500 relative overflow-hidden'>
+        <section className='section-padding bg-linear-to-br from-primary-600 via-primary-500 to-accent-teal-500 relative overflow-hidden'>
             {/* Background Pattern */}
             <div className='absolute inset-0 opacity-10'>
                 <div
@@ -42,26 +42,30 @@ const CTASection = () => {
                         session free!
                     </p>
 
-                    <div className='flex flex-wrap gap-4 justify-center pt-4'>
-                        <Link href='/signup'>
-                            <Button
-                                variant='secondary'
-                                size='lg'
-                                rightIcon={<ArrowRight />}
-                                className='bg-white text-primary-600 hover:bg-neutral-50 shadow-xl'
-                            >
-                                Start Your Journey
-                            </Button>
-                        </Link>
-                        <Link href='/mentors'>
-                            <Button
-                                variant='ghost'
-                                size='lg'
-                                className='text-white border-2 border-white hover:bg-white/10'
-                            >
-                                Browse Mentors
-                            </Button>
-                        </Link>
+                    <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-lg mx-auto pt-4'>
+                        <div className='w-full min-w-0'>
+                            <Link href='/signup'>
+                                <Button
+                                    variant='secondary'
+                                    size='lg'
+                                    rightIcon={<ArrowRight />}
+                                    className='w-full h-14 bg-white text-primary-600 hover:bg-neutral-50 shadow-xl whitespace-normal text-center leading-tight'
+                                >
+                                    Start Your Journey
+                                </Button>
+                            </Link>
+                        </div>
+                        <div className='w-full min-w-0'>
+                            <Link href='/mentors'>
+                                <Button
+                                    variant='ghost'
+                                    size='lg'
+                                    className='w-full h-14 text-white border-2 border-white hover:bg-white/10 whitespace-normal text-center leading-tight'
+                                >
+                                    Browse Mentors
+                                </Button>
+                            </Link>
+                        </div>
                     </div>
 
                     <p className='text-sm text-white/80'>

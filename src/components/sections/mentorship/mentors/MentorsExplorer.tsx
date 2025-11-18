@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button2';
 import { cn } from '@/lib/cn';
 import { Mentor } from '@/types/mentor';
 import { SlidersHorizontal } from 'lucide-react';
@@ -48,7 +48,6 @@ export default function MentorsExplorer({ initialMentors }: Props) {
     const [sort, setSort] = useState<SortKey>('relevance');
     const [showFilters, setShowFilters] = useState(false);
 
-    // compute filtered mentors
     const filtered = useMemo(() => {
         const q = query.trim().toLowerCase();
 
@@ -88,7 +87,6 @@ export default function MentorsExplorer({ initialMentors }: Props) {
                 res = res.sort((a, b) => b.totalSessions - a.totalSessions);
                 break;
             default:
-                // relevance: prioritize rating + sessions lightly
                 res = res.sort(
                     (a, b) =>
                         b.rating * 10 +
@@ -100,7 +98,6 @@ export default function MentorsExplorer({ initialMentors }: Props) {
         return res;
     }, [initialMentors, maxPrice, minRating, query, selectedTags, sort]);
 
-    // mobile filter badge count
     const activeCount =
         (query ? 1 : 0) +
         (selectedTags.length ? 1 : 0) +

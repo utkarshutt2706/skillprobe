@@ -1,4 +1,3 @@
-// src/app/mentorship/page.tsx
 import {
     BenefitsMentor,
     CTABandMentorship,

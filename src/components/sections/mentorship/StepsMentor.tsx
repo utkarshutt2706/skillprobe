@@ -1,4 +1,3 @@
-// src/components/sections/mentorship/StepsMentor.tsx
 'use client';
 
 import Image from 'next/image';

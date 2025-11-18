@@ -1,6 +1,6 @@
 'use client';
 
-import { Card } from '@/components/ui/card';
+import { Card } from '@/components/ui/card2';
 import { BookOpen, LifeBuoy, Megaphone } from 'lucide-react';
 
 const RES = [

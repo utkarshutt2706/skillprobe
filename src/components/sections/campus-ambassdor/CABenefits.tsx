@@ -1,6 +1,6 @@
 'use client';
 
-import { Card } from '@/components/ui/card';
+import { Card } from '@/components/ui/card2';
 import { Award, GraduationCap, Megaphone, Users } from 'lucide-react';
 
 const BENEFITS = [

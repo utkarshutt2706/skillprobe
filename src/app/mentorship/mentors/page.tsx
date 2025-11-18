@@ -1,4 +1,3 @@
-// Server component: renders the filterable explorer (client)
 import MentorsExplorer from '@/components/sections/mentorship/mentors/MentorsExplorer';
 import { mentors } from './data';
 

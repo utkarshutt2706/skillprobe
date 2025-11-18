@@ -1,4 +1,3 @@
-// src/components/sections/mentorship/SuccessStoriesMentor.tsx
 import TestimonialsGrid, {
     Testimonial,
 } from '@/components/feedback/TestimonialsGrid';

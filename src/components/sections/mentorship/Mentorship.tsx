@@ -1,7 +1,6 @@
-// src/components/sections/mentorship/HeroMentorship.tsx
 'use client';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button2';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 

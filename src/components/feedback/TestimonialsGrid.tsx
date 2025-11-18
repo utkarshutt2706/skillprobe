@@ -12,7 +12,7 @@ export type Testimonial = {
     role?: string;
     org?: string;
     avatarUrl?: string;
-    rating?: number; // optional 1–5
+    rating?: 1 | 2 | 3 | 4 | 5; // optional 1–5
     badge?: string; // e.g., “Mentor”, “Student”, “Ambassador”
 };
 
@@ -20,7 +20,7 @@ export type TestimonialsGridProps = {
     title?: string;
     subtitle?: string;
     items: Testimonial[];
-    variant?: 'card' | 'compact' | 'gradient'; // visual variants
+    variant?: 'card' | 'compact' | 'gradient';
     columns?: { base?: 1 | 2; md?: 1 | 2 | 3; xl?: 1 | 2 | 3 | 4 };
     showQuoteIcon?: boolean;
     className?: string;

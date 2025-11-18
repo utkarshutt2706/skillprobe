@@ -1,5 +1,6 @@
 import { Footer } from '@/components/layout/Footer';
 import { Navbar } from '@/components/layout/Navbar';
+import { UserProvider } from '@/context/UserContext';
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
@@ -33,9 +34,11 @@ export default function RootLayout({
             <body
                 className={`${inter.variable} ${poppins.variable} font-sans antialiased bg-neutral-50`}
             >
-                <Navbar />
-                <main className='min-h-screen'>{children}</main>
-                <Footer />
+                <UserProvider>
+                    <Navbar />
+                    <main className='min-h-screen'>{children}</main>
+                    <Footer />
+                </UserProvider>
             </body>
         </html>
     );

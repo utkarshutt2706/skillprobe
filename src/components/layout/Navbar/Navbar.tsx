@@ -1,18 +1,27 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import { useUser } from '@/context/UserContext';
+import { DASHBOARD_LINKS } from '@/lib/constants/dashboard-links';
 import { NAV_LINKS } from '@/lib/constants/nav-links';
 import { motion } from 'framer-motion';
 import { Menu } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import MobileMenu from './MobileMenu';
 import NavLink from './NavLink';
+import ProfileMenu from './ProfileMenu';
 
 const Navbar = () => {
+    const pathname = usePathname();
+    const isDashboard = pathname?.startsWith('/dashboard');
+
+    const links = isDashboard ? DASHBOARD_LINKS : NAV_LINKS;
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const { user } = useUser();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -28,7 +37,7 @@ const Navbar = () => {
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.3 }}
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+                className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
                     isScrolled
                         ? 'bg-white/95 backdrop-blur-md shadow-lg'
                         : 'bg-transparent'
@@ -51,19 +60,27 @@ const Navbar = () => {
 
                         {/* Desktop Navigation */}
                         <div className='hidden md:flex items-center space-x-8'>
-                            {NAV_LINKS.map((link) => (
+                            {links.map((link) => (
                                 <NavLink key={link.href} {...link} />
                             ))}
                         </div>
 
                         {/* Desktop CTA Buttons */}
                         <div className='hidden md:flex items-center space-x-4'>
-                            <Link href='/login'>
-                                <Button variant='ghost'>Sign In</Button>
-                            </Link>
-                            <Link href='/signup'>
-                                <Button variant='primary'>Get Started</Button>
-                            </Link>
+                            {user ? (
+                                <ProfileMenu />
+                            ) : (
+                                <>
+                                    <Link href='/login'>
+                                        <Button variant='ghost'>Sign In</Button>
+                                    </Link>
+                                    <Link href='/signup'>
+                                        <Button variant='primary'>
+                                            Get Started
+                                        </Button>
+                                    </Link>
+                                </>
+                            )}
                         </div>
 
                         {/* Mobile Menu Button */}

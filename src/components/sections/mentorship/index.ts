@@ -1,4 +1,3 @@
-// src/components/sections/mentorship/index.ts
 export { default as BenefitsMentor } from './BenefitsMentor';
 export { default as CTABandMentorship } from './CTABandMentorship';
 export { default as DashboardFeatures } from './DashboardFeatures';

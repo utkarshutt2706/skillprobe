@@ -1,7 +1,6 @@
-// src/components/sections/mentorship/CTABandMentorship.tsx
 'use client';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button2';
 import Link from 'next/link';
 
 export default function CTABandMentorship() {

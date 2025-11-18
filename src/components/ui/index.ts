@@ -1,3 +1,3 @@
-export * from './button';
-export * from './card';
-// Add more UI components as you build them
+export * from './accordion2';
+export * from './button2';
+export * from './card2';

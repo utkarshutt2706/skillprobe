@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button2';
 import { Mentor } from '@/types/mentor';
 import { Briefcase, Star } from 'lucide-react';
 import Image from 'next/image';
@@ -14,12 +14,10 @@ type Props = {
 export default function MentorCard({ mentor }: Props) {
     const router = useRouter();
 
-    // Navigate on card click
     const handleCardClick = () => {
         router.push(`/mentorship/mentors/${mentor.id}`);
     };
 
-    // Prevent card navigation when clicking Book
     const handleBookClick = (e: React.MouseEvent) => {
         e.stopPropagation();
     };

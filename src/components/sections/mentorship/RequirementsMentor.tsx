@@ -1,4 +1,3 @@
-// src/components/sections/mentorship/RequirementsMentor.tsx
 'use client';
 
 import { CheckCircle2 } from 'lucide-react';

@@ -1,6 +1,6 @@
 'use client';
 
-import { Card } from '@/components/ui/card2';
+import { Card } from '@/components/ui/card';
 import { motion } from 'framer-motion';
 import {
     BookOpen,

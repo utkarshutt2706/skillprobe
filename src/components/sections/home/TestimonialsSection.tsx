@@ -10,7 +10,7 @@ const testimonials: Testimonial[] = [
         role: 'Senior Software Developer',
         org: 'Skillprobe',
         rating: 5,
-        badge: 'Mentor',
+        badge: 'Mentee',
     },
     {
         quote: 'The mentor tools on Skillprobe are exactly what professionals need. I can manage sessions, provide feedback, and track mentee progress easily.',
@@ -23,10 +23,9 @@ const testimonials: Testimonial[] = [
         quote: 'Wonderful platform to connect with aspiring developers. The mentorship experience is a game-changer for both mentors and mentees.',
         name: 'Ruchika Singh',
         role: 'Business Analyst',
-        rating: 4,
-        badge: 'Mentor',
+        rating: 5,
+        badge: 'Campus Ambassador',
     },
-    // add more as needed
 ];
 
 export default function TestimonialsSection() {

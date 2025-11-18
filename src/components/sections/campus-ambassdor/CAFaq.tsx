@@ -1,6 +1,6 @@
 'use client';
 
-import { Accordion } from '@/components/ui/Accordion';
+import { Accordion } from '@/components/ui/accordion';
 
 const FAQ = [
     {

@@ -1,7 +1,7 @@
 // src/components/sections/mentorship/DashboardFeatures.tsx
 'use client';
 
-import { Card } from '@/components/ui/Card';
+import { Card } from '@/components/ui/card';
 import { LayoutGrid, Users, Video, Wallet } from 'lucide-react';
 
 const ITEMS = [

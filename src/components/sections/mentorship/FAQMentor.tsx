@@ -1,7 +1,7 @@
 // src/components/sections/mentorship/FAQMentor.tsx
 'use client';
 
-import { Accordion, AccordionItem } from '@/components/ui/Accordion';
+import { Accordion, AccordionItem } from '@/components/ui/accordion';
 
 const FAQ: AccordionItem[] = [
     {

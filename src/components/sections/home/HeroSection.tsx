@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/Button';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 const HeroSection = () => {
@@ -81,7 +81,6 @@ const HeroSection = () => {
                                     >
                                         <span className='inline-flex items-center justify-center gap-2'>
                                             Get Started Free
-                                            <ArrowRight className='w-5 h-5 shrink-0' />
                                         </span>
                                     </Button>
                                 </Link>

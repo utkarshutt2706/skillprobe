@@ -1,0 +1,10 @@
+// src/components/sections/mentorship/index.ts
+export { default as BenefitsMentor } from './BenefitsMentor';
+export { default as CTABandMentorship } from './CTABandMentorship';
+export { default as DashboardFeatures } from './DashboardFeatures';
+export { default as FAQMentor } from './FAQMentor';
+export { default as HeroMentorship } from './HeroMentorship';
+export { default as RequirementsMentor } from './RequirementsMentor';
+export { default as StepsMentor } from './StepsMentor';
+export { default as SuccessStoriesMentor } from './SuccessStoriesMentor';
+export { default as SupportResourcesMentor } from './SupportResourcesMentor';

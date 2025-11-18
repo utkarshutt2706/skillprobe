@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/Button';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 const CTASection = () => {
@@ -48,7 +48,6 @@ const CTASection = () => {
                                 <Button
                                     variant='secondary'
                                     size='lg'
-                                    rightIcon={<ArrowRight />}
                                     className='w-full h-14 bg-white text-primary-600 hover:bg-neutral-50 shadow-xl whitespace-normal text-center leading-tight'
                                 >
                                     Start Your Journey

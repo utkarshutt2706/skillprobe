@@ -1,6 +1,6 @@
 'use client';
 
-import { Card } from '@/components/ui/Card';
+import { Card } from '@/components/ui/card';
 import { PiggyBank, Share2, Target, Users2 } from 'lucide-react';
 
 const ITEMS = [

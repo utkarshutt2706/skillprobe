@@ -1,7 +1,7 @@
 // src/components/sections/mentorship/BenefitsMentor.tsx
 'use client';
 
-import { Card } from '@/components/ui/Card';
+import { Card } from '@/components/ui/card';
 import { BarChart3, CreditCard, Headphones, Megaphone } from 'lucide-react';
 
 const BENEFITS = [

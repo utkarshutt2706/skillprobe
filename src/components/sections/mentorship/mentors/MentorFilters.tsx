@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@/components/ui/button2';
+import { Button } from '@/components/ui/button';
 import { Search, X } from 'lucide-react';
 import { useMemo } from 'react';
 

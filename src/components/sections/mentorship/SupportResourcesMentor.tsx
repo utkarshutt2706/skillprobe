@@ -1,6 +1,6 @@
 'use client';
 
-import { Card } from '@/components/ui/card2';
+import { Card } from '@/components/ui/card';
 import { GraduationCap, LifeBuoy, Megaphone } from 'lucide-react';
 
 const RES = [

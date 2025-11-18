@@ -1,3 +1,3 @@
-export * from './accordion2';
-export * from './button2';
-export * from './card2';
+export * from './accordion';
+export * from './button';
+export * from './card';

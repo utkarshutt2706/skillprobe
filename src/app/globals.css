@@ -236,3 +236,12 @@ h6 {
         animation-delay: 400ms;
     }
 }
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Fallback for browsers not focusing during anchor jumps */
+html {
+    scroll-behavior: smooth;
+}

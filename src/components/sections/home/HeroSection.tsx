@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/Button';
 import { motion } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 const HeroSection = () => {
@@ -80,7 +80,7 @@ const HeroSection = () => {
                                         className='w-full h-14 whitespace-normal text-center leading-tight'
                                     >
                                         <span className='inline-flex items-center justify-center gap-2'>
-                                            Get Started Free
+                                            Get Started Free <ArrowRight />
                                         </span>
                                     </Button>
                                 </Link>
@@ -116,7 +116,7 @@ const HeroSection = () => {
                             className='relative w-full h-[500px] lg:h-[600px]'
                         >
                             {/* Replace with actual hero image */}
-                            <div className='relative w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary-500 via-primary-600 to-accent-teal-500 flex items-center justify-center'>
+                            <div className='relative w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-linear-to-br from-primary-500 via-primary-600 to-accent-teal-500 flex items-center justify-center'>
                                 <div className='text-center text-white p-8'>
                                     <div className='text-6xl mb-4'>🎯</div>
                                     <p className='text-2xl font-bold'>

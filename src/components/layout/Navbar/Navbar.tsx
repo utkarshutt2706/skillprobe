@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/Button';
-import { NAV_LINKS } from '@/lib/constants';
+import { NAV_LINKS } from '@/lib/constants/nav-links';
 import { motion } from 'framer-motion';
 import { Menu } from 'lucide-react';
 import Image from 'next/image';

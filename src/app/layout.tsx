@@ -1,5 +1,4 @@
-import { Footer } from '@/components/layout/Footer';
-import { Navbar } from '@/components/layout/Navbar';
+import AppShell from '@/components/layout/AppShell';
 import { UserProvider } from '@/context/UserContext';
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
@@ -35,9 +34,9 @@ export default function RootLayout({
                 className={`${inter.variable} ${poppins.variable} font-sans antialiased bg-neutral-50`}
             >
                 <UserProvider>
-                    <Navbar />
-                    <main className='min-h-screen'>{children}</main>
-                    <Footer />
+                    <AppShell>
+                        <main className='min-h-screen'>{children}</main>
+                    </AppShell>
                 </UserProvider>
             </body>
         </html>

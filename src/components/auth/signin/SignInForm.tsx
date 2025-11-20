@@ -1,12 +1,16 @@
 'use client';
 
-import { Button } from '@/components/ui';
+import { Button } from '@/components/ui/button';
+import { useUser } from '@/context/UserContext';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import FormInput from '../shared/FormInput';
 
 export default function SignInForm() {
+    const { signIn } = useUser();
+    const router = useRouter();
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
@@ -18,12 +22,14 @@ export default function SignInForm() {
         setLoading(true);
         setError(null);
 
-        // Demo auth
-        if (email === 'demo@skillprobe.co.in' && pass === 'password123') {
-            window.location.href = '/dashboard';
+        const result = await signIn(email, pass);
+
+        if (result.success) {
+            router.push('/dashboard');
         } else {
-            setError('Invalid email or password.');
+            setError(result.error || 'Invalid email or password.');
         }
+
         setLoading(false);
     }
 

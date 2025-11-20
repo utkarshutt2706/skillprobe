@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const HeroSection = () => {
     return (
-        <section className='relative min-h-screen gradient-bg flex items-center overflow-hidden pt-20'>
+        <section className='relative min-h-screen gradient-bg flex items-center overflow-hidden'>
             {/* Animated Background Elements */}
             <div className='absolute inset-0 overflow-hidden pointer-events-none'>
                 <motion.div

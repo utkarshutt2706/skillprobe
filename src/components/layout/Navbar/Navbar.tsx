@@ -1,34 +1,36 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { useUser } from '@/context/UserContext';
-import { DASHBOARD_LINKS } from '@/lib/constants/dashboard-links';
-import { NAV_LINKS } from '@/lib/constants/nav-links';
+import { useNavigation } from '@/hooks/useNavigation';
 import { motion } from 'framer-motion';
 import { Menu } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import AuthButtons from './AuthButtons';
 import MobileMenu from './MobileMenu';
 import NavLink from './NavLink';
-import ProfileMenu from './ProfileMenu';
 
 const Navbar = () => {
-    const pathname = usePathname();
-    const isDashboard = pathname?.startsWith('/dashboard');
-
-    const links = isDashboard ? DASHBOARD_LINKS : NAV_LINKS;
+    const { links, isAuthenticated } = useNavigation();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const { user } = useUser();
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 20);
         };
+        const handleResize = () => {
+            // if viewport is now >= md, close menu
+            if (window.innerWidth >= 768) {
+                setIsMobileMenuOpen(false);
+            }
+        };
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
     return (
@@ -65,28 +67,19 @@ const Navbar = () => {
                             ))}
                         </div>
 
-                        {/* Desktop CTA Buttons */}
+                        {/* Desktop Auth Buttons */}
                         <div className='hidden md:flex items-center space-x-4'>
-                            {user ? (
-                                <ProfileMenu />
-                            ) : (
-                                <>
-                                    <Link href='/login'>
-                                        <Button variant='ghost'>Sign In</Button>
-                                    </Link>
-                                    <Link href='/signup'>
-                                        <Button variant='primary'>
-                                            Get Started
-                                        </Button>
-                                    </Link>
-                                </>
-                            )}
+                            <AuthButtons
+                                isAuthenticated={isAuthenticated}
+                                variant='horizontal'
+                            />
                         </div>
 
                         {/* Mobile Menu Button */}
                         <button
                             onClick={() => setIsMobileMenuOpen(true)}
                             className='md:hidden p-2 text-neutral-700 hover:text-primary-500 hover:bg-neutral-100 rounded-lg transition-colors'
+                            aria-label='Open mobile menu'
                         >
                             <Menu size={24} />
                         </button>

@@ -1,5 +1,7 @@
 'use client';
 
 export default function LocalDate({ iso }: { iso: string }) {
-    return <>{new Date(iso).toLocaleString()}</>;
+    return (
+        <span suppressHydrationWarning>{new Date(iso).toLocaleString()}</span>
+    );
 }
